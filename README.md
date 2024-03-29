@@ -1,0 +1,2 @@
+# pydagoras
+pydagoras python lib
