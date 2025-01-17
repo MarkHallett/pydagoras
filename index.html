@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.7e359304.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.bcfcd587.min.css">
       
       
 
@@ -247,24 +247,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#pydagoras.dag_dot" class="md-nav__link">
-    <span class="md-ellipsis">
-      dag_dot
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pydagoras.dag_dot.DAG" class="md-nav__link">
-    <span class="md-ellipsis">
-      DAG
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -368,24 +350,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#pydagoras.dag_dot" class="md-nav__link">
-    <span class="md-ellipsis">
-      dag_dot
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pydagoras.dag_dot.DAG" class="md-nav__link">
-    <span class="md-ellipsis">
-      DAG
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -411,371 +375,6 @@
 <li><code>mkdocs -h</code> - Print help message and exit.</li>
 <li><code>mkdocs gh-deploy</code> - push to github.io</li>
 </ul>
-
-
-<div class="doc doc-object doc-module">
-
-
-
-<a id="pydagoras.dag_dot"></a>
-  <div class="doc doc-contents first">
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-<div class="doc doc-object doc-class">
-
-
-
-<h2 id="pydagoras.dag_dot.DAG" class="doc doc-heading">
-          <code>DAG</code>
-
-
-</h2>
-
-
-  <div class="doc doc-contents ">
-          <p class="doc doc-class-bases">
-            Bases: <code>object</code></p>
-
-  
-      <p>Base DAG ok</p>
-
-            <details class="quote">
-              <summary>Source code in <code>pydagoras/dag_dot.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  9</span>
-<span class="normal"> 10</span>
-<span class="normal"> 11</span>
-<span class="normal"> 12</span>
-<span class="normal"> 13</span>
-<span class="normal"> 14</span>
-<span class="normal"> 15</span>
-<span class="normal"> 16</span>
-<span class="normal"> 17</span>
-<span class="normal"> 18</span>
-<span class="normal"> 19</span>
-<span class="normal"> 20</span>
-<span class="normal"> 21</span>
-<span class="normal"> 22</span>
-<span class="normal"> 23</span>
-<span class="normal"> 24</span>
-<span class="normal"> 25</span>
-<span class="normal"> 26</span>
-<span class="normal"> 27</span>
-<span class="normal"> 28</span>
-<span class="normal"> 29</span>
-<span class="normal"> 30</span>
-<span class="normal"> 31</span>
-<span class="normal"> 32</span>
-<span class="normal"> 33</span>
-<span class="normal"> 34</span>
-<span class="normal"> 35</span>
-<span class="normal"> 36</span>
-<span class="normal"> 37</span>
-<span class="normal"> 38</span>
-<span class="normal"> 39</span>
-<span class="normal"> 40</span>
-<span class="normal"> 41</span>
-<span class="normal"> 42</span>
-<span class="normal"> 43</span>
-<span class="normal"> 44</span>
-<span class="normal"> 45</span>
-<span class="normal"> 46</span>
-<span class="normal"> 47</span>
-<span class="normal"> 48</span>
-<span class="normal"> 49</span>
-<span class="normal"> 50</span>
-<span class="normal"> 51</span>
-<span class="normal"> 52</span>
-<span class="normal"> 53</span>
-<span class="normal"> 54</span>
-<span class="normal"> 55</span>
-<span class="normal"> 56</span>
-<span class="normal"> 57</span>
-<span class="normal"> 58</span>
-<span class="normal"> 59</span>
-<span class="normal"> 60</span>
-<span class="normal"> 61</span>
-<span class="normal"> 62</span>
-<span class="normal"> 63</span>
-<span class="normal"> 64</span>
-<span class="normal"> 65</span>
-<span class="normal"> 66</span>
-<span class="normal"> 67</span>
-<span class="normal"> 68</span>
-<span class="normal"> 69</span>
-<span class="normal"> 70</span>
-<span class="normal"> 71</span>
-<span class="normal"> 72</span>
-<span class="normal"> 73</span>
-<span class="normal"> 74</span>
-<span class="normal"> 75</span>
-<span class="normal"> 76</span>
-<span class="normal"> 77</span>
-<span class="normal"> 78</span>
-<span class="normal"> 79</span>
-<span class="normal"> 80</span>
-<span class="normal"> 81</span>
-<span class="normal"> 82</span>
-<span class="normal"> 83</span>
-<span class="normal"> 84</span>
-<span class="normal"> 85</span>
-<span class="normal"> 86</span>
-<span class="normal"> 87</span>
-<span class="normal"> 88</span>
-<span class="normal"> 89</span>
-<span class="normal"> 90</span>
-<span class="normal"> 91</span>
-<span class="normal"> 92</span>
-<span class="normal"> 93</span>
-<span class="normal"> 94</span>
-<span class="normal"> 95</span>
-<span class="normal"> 96</span>
-<span class="normal"> 97</span>
-<span class="normal"> 98</span>
-<span class="normal"> 99</span>
-<span class="normal">100</span>
-<span class="normal">101</span>
-<span class="normal">102</span>
-<span class="normal">103</span>
-<span class="normal">104</span>
-<span class="normal">105</span>
-<span class="normal">106</span>
-<span class="normal">107</span>
-<span class="normal">108</span>
-<span class="normal">109</span>
-<span class="normal">110</span>
-<span class="normal">111</span>
-<span class="normal">112</span>
-<span class="normal">113</span>
-<span class="normal">114</span>
-<span class="normal">115</span>
-<span class="normal">116</span>
-<span class="normal">117</span>
-<span class="normal">118</span>
-<span class="normal">119</span>
-<span class="normal">120</span>
-<span class="normal">121</span>
-<span class="normal">122</span>
-<span class="normal">123</span>
-<span class="normal">124</span>
-<span class="normal">125</span>
-<span class="normal">126</span>
-<span class="normal">127</span>
-<span class="normal">128</span>
-<span class="normal">129</span>
-<span class="normal">130</span>
-<span class="normal">131</span>
-<span class="normal">132</span>
-<span class="normal">133</span>
-<span class="normal">134</span>
-<span class="normal">135</span>
-<span class="normal">136</span>
-<span class="normal">137</span>
-<span class="normal">138</span>
-<span class="normal">139</span>
-<span class="normal">140</span>
-<span class="normal">141</span>
-<span class="normal">142</span>
-<span class="normal">143</span>
-<span class="normal">144</span>
-<span class="normal">145</span>
-<span class="normal">146</span>
-<span class="normal">147</span>
-<span class="normal">148</span>
-<span class="normal">149</span>
-<span class="normal">150</span>
-<span class="normal">151</span>
-<span class="normal">152</span>
-<span class="normal">153</span>
-<span class="normal">154</span>
-<span class="normal">155</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">DAG</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span> <span class="c1"># functionality</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;Base DAG ok&#39;&#39;&#39;</span>
-    <span class="n">__shared_state</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># would be nice to use a collections.OrderedDict()</span>
-    <span class="c1">#__filename = None</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__shared_state</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">=</span><span class="n">pgv</span><span class="o">.</span><span class="n">AGraph</span><span class="p">(</span><span class="n">directed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">rankdir</span><span class="o">=</span><span class="s1">&#39;LR&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Eg DAG&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">input_nodes</span><span class="o">=</span><span class="p">[]</span>
-        <span class="c1">#print( self.G.to_string() )</span>
-
-    <span class="k">def</span> <span class="nf">makeNode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">label</span><span class="p">,</span><span class="n">calc</span><span class="p">,</span><span class="n">usedby</span><span class="p">,</span><span class="n">nodetype</span><span class="p">):</span>
-        <span class="n">n</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">label</span><span class="p">,</span><span class="n">calc</span><span class="p">,</span><span class="n">usedby</span><span class="p">,</span><span class="n">nodetype</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">nodetype</span> <span class="o">==</span> <span class="s1">&#39;in&#39;</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">input_nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">defNode</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">usedby</span> <span class="o">=</span><span class="n">usedby</span><span class="p">,</span> <span class="n">nodetype</span><span class="o">=</span><span class="n">nodetype</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">n</span>
-
-    <span class="k">def</span> <span class="nf">defNode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">node</span><span class="p">,</span><span class="n">usedby</span><span class="p">,</span><span class="n">nodetype</span><span class="p">):</span>
-        <span class="n">doc</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">doc</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">doc</span><span class="p">:</span>
-            <span class="n">doc</span> <span class="o">=</span> <span class="s1">&#39;qwerty&#39;</span>
-
-        <span class="k">if</span> <span class="n">nodetype</span> <span class="o">==</span> <span class="s1">&#39;in&#39;</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s2">&quot;square&quot;</span><span class="p">)</span>
-            <span class="c1">#node= self.AddInNode(doc)</span>
-            <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">usedby</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">AddEdge</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="n">n</span><span class="o">.</span><span class="n">doc</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">nodetype</span> <span class="o">==</span> <span class="s1">&#39;internal&#39;</span><span class="p">:</span>
-            <span class="c1">#node= self.AddNode(doc,self.calcRateA)</span>
-            <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">usedby</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">AddEdge</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="n">n</span><span class="o">.</span><span class="n">doc</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">nodetype</span> <span class="o">==</span> <span class="s1">&#39;out&#39;</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
-
-
-    <span class="k">def</span> <span class="nf">AddEdge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">node1</span><span class="p">,</span><span class="n">node2</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">node1</span><span class="p">,</span><span class="n">node2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Undefined&#39;</span><span class="p">)</span>
-        <span class="c1">#print( self.G.to_string() )</span>
-
-    <span class="k">def</span> <span class="nf">update_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">node1</span><span class="p">,</span><span class="n">node2</span><span class="p">,</span><span class="n">value</span><span class="p">):</span>
-        <span class="c1">#if node2.nodetype == &#39;out&#39;:</span>
-        <span class="c1">#    mr_mess_bus.publish(node.doc,value)</span>
-
-        <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span>
-        <span class="n">fontcolor</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span>
-        <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span><span class="p">:</span>
-            <span class="n">fontcolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span>
-        <span class="k">elif</span> <span class="n">value</span> <span class="ow">in</span> <span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">):</span>
-            <span class="n">fontcolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span>
-            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span>
-
-        <span class="c1">#self.G.add_node(node1,color=color,fontcolor=fontcolor,tooltip=&#39;hello&#39;)</span>
-        <span class="c1">#A [URL=&quot;[A|home]&quot; tooltip=&quot;A link&quot;]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">node1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span><span class="n">fontcolor</span><span class="o">=</span><span class="n">fontcolor</span><span class="p">,</span><span class="n">URL</span><span class="o">=</span><span class="n">node1</span><span class="o">+</span><span class="s1">&#39;.html&#39;</span><span class="p">,</span><span class="n">tooltip</span><span class="o">=</span><span class="n">node1</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">node1</span><span class="p">,</span><span class="n">node2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">value</span><span class="p">,</span><span class="n">fontcolor</span><span class="o">=</span><span class="n">fontcolor</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;added node and edge&#39;</span><span class="p">)</span>
-        <span class="c1">#print( self.G.to_string() )</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dot_pp</span><span class="p">()</span>
-
-        <span class="c1">#t = threading.Timer(1, self.fade, args=(node1, node2,value,color) )</span>
-        <span class="c1">#t.start()</span>
-
-    <span class="k">def</span> <span class="nf">fade</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">node1</span><span class="p">,</span> <span class="n">node2</span><span class="p">,</span><span class="n">value</span><span class="p">,</span><span class="n">color</span><span class="p">):</span>
-        <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;FADE&#39;</span><span class="p">)</span>
-        <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
-        <span class="n">fontcolor</span><span class="o">=</span><span class="n">color</span>
-        <span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">node1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span><span class="n">fontcolor</span><span class="o">=</span><span class="n">fontcolor</span><span class="p">,</span><span class="n">URL</span><span class="o">=</span><span class="n">node1</span><span class="o">+</span><span class="s1">&#39;.html&#39;</span><span class="p">,</span><span class="n">tooltip</span><span class="o">=</span><span class="n">node1</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">node1</span><span class="p">,</span><span class="n">node2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">value</span><span class="p">,</span><span class="n">fontcolor</span><span class="o">=</span><span class="n">fontcolor</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dot_pp</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fade&#39;</span><span class="p">)</span>
-
-
-
-    <span class="k">def</span> <span class="nf">set_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">doc</span><span class="p">,</span><span class="n">value</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_nodes</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">doc</span> <span class="o">==</span> <span class="n">doc</span><span class="p">:</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">info</span> <span class="p">(</span><span class="s1">&#39;set </span><span class="si">%s</span><span class="s1"> </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">doc</span><span class="p">,</span><span class="n">value</span><span class="p">))</span>
-                <span class="k">for</span> <span class="n">usedby</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">usedby</span><span class="p">:</span>
-                     <span class="bp">self</span><span class="o">.</span><span class="n">update_node</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="n">usedby</span><span class="o">.</span><span class="n">doc</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="n">node</span><span class="p">,</span><span class="n">value</span><span class="p">)</span>
-
-                <span class="n">graph_def</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">to_string</span><span class="p">()</span> 
-                <span class="c1">#print( graph_def )</span>
-                <span class="k">return</span> <span class="n">graph_def</span>
-
-    <span class="k">def</span> <span class="nf">dot_pp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">pass</span>
-        <span class="c1">#print &#39;print dot and convert to png&#39;</span>
-        <span class="c1">#self.G.layout(prog=&#39;dot&#39;) # layout with default (neato)</span>
-        <span class="c1">#print &#39;Draw&#39;</span>
-        <span class="c1">#self.G.draw(self.filename)</span>
-
-    <span class="k">def</span> <span class="nf">setValue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">v</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="n">n</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
-            <span class="k">return</span>
-
-        <span class="c1"># build the DAG</span>
-        <span class="n">n</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">v</span>
-        <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">n</span><span class="o">.</span><span class="n">usedby</span><span class="p">:</span>
-           <span class="k">if</span> <span class="n">u</span><span class="o">.</span><span class="n">calc</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
-               <span class="k">continue</span>
-           <span class="n">new_value</span> <span class="o">=</span> <span class="kc">None</span>
-           <span class="k">try</span><span class="p">:</span>
-              <span class="c1">#u.pp()</span>
-              <span class="n">new_value</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">calc</span><span class="p">(</span><span class="n">node</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
-           <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-              <span class="nb">print</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
-
-           <span class="bp">self</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">new_value</span><span class="p">)</span>
-
-           <span class="c1"># if output print</span>
-        <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;SET VALUE used by&#39;</span><span class="p">,</span> <span class="n">n</span><span class="o">.</span><span class="n">usedby</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">doc</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">n</span><span class="o">.</span><span class="n">usedby</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">usedby</span> <span class="o">==</span> <span class="p">[]:</span>
-            <span class="c1">#print &#39;!! SET VALUE OF OUTPUT&#39;</span>
-            <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;update dag_dot.py </span><span class="si">%s</span><span class="s1"> </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">usedby</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">doc</span><span class="p">,</span> <span class="n">n</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">info</span> <span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-            <span class="c1">#print msg</span>
-            <span class="c1">#print(&#39;dont publish&#39;)</span>
-            <span class="c1">#print( self.G.to_string() )</span>
-            <span class="c1">#publish.run(n.usedby[0].doc,str(n.value))</span>
-            <span class="c1">#mr_mess_bus.publish(n.usedby[0].doc,str(n.value))</span>
-
-
-    <span class="k">def</span> <span class="nf">pp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1"># must be over ridden by a borg</span>
-        <span class="c1"># use doc string on class</span>
-        <span class="nb">print</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span> <span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="n">Node</span><span class="p">()):</span>
-                <span class="nb">print</span> <span class="p">(</span><span class="n">k</span><span class="p">,)</span>
-                <span class="n">v</span><span class="o">.</span><span class="n">pp</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">ppInputs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">,</span> <span class="s1">&#39; Inputs&#39;</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_nodes</span><span class="p">:</span>
-            <span class="n">n</span><span class="o">.</span><span class="n">pp</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">ppOutputs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">,</span> <span class="s1">&#39; Outputs&#39;</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span> <span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="n">Node</span><span class="p">()):</span>
-                <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">usedby</span> <span class="o">==</span> <span class="p">[]:</span>
-                    <span class="nb">print</span> <span class="p">(</span><span class="n">k</span><span class="p">,)</span>
-                    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">doc</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-            </details>
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-  </div>
-
-
-</div>
-
-
-
-
-  </div>
-
-  </div>
-
-</div>
 
 
 
@@ -825,7 +424,7 @@
     <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.bd41221c.min.js"></script>
+      <script src="assets/javascripts/bundle.1e8ae164.min.js"></script>
       
     
   </body>

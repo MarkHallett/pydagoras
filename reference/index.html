@@ -14,7 +14,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
     
     
       
@@ -22,7 +22,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
       
       
 
@@ -306,6 +306,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pydagoras.dag_dot.calc" class="md-nav__link">
+    <span class="md-ellipsis">
+      calc
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pydagoras.node" class="md-nav__link">
+    <span class="md-ellipsis">
+      node
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pydagoras.node.Node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -328,9 +355,14 @@
 
 
 <a id="pydagoras.dag_dot"></a>
-  <div class="doc doc-contents first">
+    <div class="doc doc-contents first">
 
-  
+
+
+
+
+
+
 
   <div class="doc doc-children">
 
@@ -346,24 +378,27 @@
 
 
 <h2 id="pydagoras.dag_dot.DAG" class="doc doc-heading">
-          <code>DAG</code>
+            <code>DAG</code>
 
 
 </h2>
 
 
-  <div class="doc doc-contents ">
-          <p class="doc doc-class-bases">
-            Bases: <code>object</code></p>
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code>object</code></p>
 
-  
-      <p>Base DAG ok</p>
 
-            <details class="quote">
-              <summary>Source code in <code>pydagoras/dag_dot.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  9</span>
-<span class="normal"> 10</span>
-<span class="normal"> 11</span>
+        <p>Base DAG</p>
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>pydagoras/dag_dot.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 11</span>
 <span class="normal"> 12</span>
 <span class="normal"> 13</span>
 <span class="normal"> 14</span>
@@ -507,8 +542,10 @@
 <span class="normal">152</span>
 <span class="normal">153</span>
 <span class="normal">154</span>
-<span class="normal">155</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">DAG</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span> <span class="c1"># functionality</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;Base DAG ok&#39;&#39;&#39;</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">DAG</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span> <span class="c1"># functionality</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Base DAG &#39;&#39;&#39;</span>
     <span class="n">__shared_state</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># would be nice to use a collections.OrderedDict()</span>
     <span class="c1">#__filename = None</span>
 
@@ -655,9 +692,9 @@
                     <span class="nb">print</span> <span class="p">(</span><span class="n">k</span><span class="p">,)</span>
                     <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">doc</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-            </details>
+              </details>
 
-  
+
 
   <div class="doc doc-children">
 
@@ -673,8 +710,176 @@
 
   </div>
 
+    </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="pydagoras.dag_dot.calc" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">calc</span><span class="p">(</span><span class="n">f1</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>calc</p>
+
+            <details class="quote">
+              <summary>Source code in <code>pydagoras/dag_dot.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">calc</span><span class="p">(</span><span class="n">f1</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39; calc &#39;&#39;&#39;</span>
+        <span class="k">def</span> <span class="nf">f3</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="n">node</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">]</span>
+
+            <span class="k">for</span> <span class="n">u_node</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">usedby</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">o_node</span> <span class="ow">in</span> <span class="n">u_node</span><span class="o">.</span><span class="n">usedby</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">update_node</span><span class="p">(</span><span class="n">u_node</span><span class="o">.</span><span class="n">doc</span><span class="p">,</span><span class="n">o_node</span><span class="o">.</span><span class="n">doc</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">rtn</span> <span class="o">=</span> <span class="n">f1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Error in </span><span class="si">%s</span><span class="s1">: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">u_node</span><span class="o">.</span><span class="n">doc</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)))</span>
+                <span class="c1">#rtn = str(e)</span>
+                <span class="n">rtn</span> <span class="o">=</span> <span class="s1">&#39;e&#39;</span>
+
+            <span class="k">for</span> <span class="n">u_node</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">usedby</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">o_node</span> <span class="ow">in</span> <span class="n">u_node</span><span class="o">.</span><span class="n">usedby</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">update_node</span><span class="p">(</span><span class="n">u_node</span><span class="o">.</span><span class="n">doc</span><span class="p">,</span><span class="n">o_node</span><span class="o">.</span><span class="n">doc</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">rtn</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">dot_pp</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">rtn</span>
+        <span class="k">return</span> <span class="n">f3</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
   </div>
 
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="pydagoras.node"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="pydagoras.node.Node" class="doc doc-heading">
+            <code>Node</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code>object</code></p>
+
+
+        <p>Node</p>
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>pydagoras/node.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Node</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39; Node &#39;&#39;&#39;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">doc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">calc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">usedby</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nodetype</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">calc</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">doc</span> <span class="o">=</span> <span class="n">doc</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">usedby</span> <span class="o">=</span> <span class="n">usedby</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nodetype</span> <span class="o">=</span> <span class="n">nodetype</span>
+
+    <span class="k">def</span> <span class="nf">pp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">usedby</span><span class="p">:</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;= </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, used by, </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">doc</span><span class="p">,</span> <span class="p">[</span><span class="n">n</span><span class="o">.</span><span class="n">doc</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">usedby</span><span class="p">]))</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
 
 </div>
 
@@ -683,7 +888,7 @@
 
   </div>
 
-  </div>
+    </div>
 
 </div>
 
@@ -735,7 +940,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.bd41221c.min.js"></script>
+      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
       
     
   </body>
