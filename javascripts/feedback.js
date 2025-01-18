@@ -1,5 +1,5 @@
 var feedback = document.forms.feedback
-feedback.hidden = false 
+feedback.hidden = false
 
 feedback.addEventListener("submit", function(ev) {
   ev.preventDefault()
