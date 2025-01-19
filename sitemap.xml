@@ -6,17 +6,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>http://pydagoras.com/Package/</loc>
+         <lastmod>2025-01-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>http://pydagoras.com/demo/</loc>
          <lastmod>2025-01-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://pydagoras.com/more_docs/</loc>
-         <lastmod>2025-01-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>http://pydagoras.com/package/</loc>
          <lastmod>2025-01-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
