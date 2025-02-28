@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
       
       
 
@@ -623,14 +623,9 @@
 
 
 <a id="pydagoras.dag_dot"></a>
-    <div class="doc doc-contents first">
+  <div class="doc doc-contents first">
 
-
-
-
-
-
-
+  
 
   <div class="doc doc-children">
 
@@ -646,27 +641,22 @@
 
 
 <h2 id="pydagoras.dag_dot.DAG" class="doc doc-heading">
-            <code>DAG</code>
+          <code>DAG</code>
 
 
 </h2>
 
 
-    <div class="doc doc-contents ">
-            <p class="doc doc-class-bases">
-              Bases: <code>object</code></p>
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code>object</code></p>
 
+  
+      <p>Base DAG</p>
 
-        <p>Base DAG</p>
-
-
-
-
-
-
-              <details class="quote">
-                <summary>Source code in <code>pydagoras/dag_dot.py</code></summary>
-                <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-10"> 10</a></span>
+            <details class="quote">
+              <summary>Source code in <code>pydagoras/dag_dot.py</code></summary>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-10"> 10</a></span>
 <span class="normal"><a href="#__codelineno-0-11"> 11</a></span>
 <span class="normal"><a href="#__codelineno-0-12"> 12</a></span>
 <span class="normal"><a href="#__codelineno-0-13"> 13</a></span>
@@ -964,11 +954,12 @@
 </span><span id="__span-0-157"><a id="__codelineno-0-157" name="__codelineno-0-157"></a>                    <span class="nb">print</span> <span class="p">(</span><span class="n">k</span><span class="p">,)</span>
 </span><span id="__span-0-158"><a id="__codelineno-0-158" name="__codelineno-0-158"></a>                    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">doc</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-              </details>
+            </details>
 
-
+  
 
   <div class="doc doc-children">
+
 
 
 
@@ -981,19 +972,20 @@
 <div class="doc doc-object doc-function">
 
 
+
 <h3 id="pydagoras.dag_dot.DAG.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></code>
 
 </h3>
 
 
-    <div class="doc doc-contents ">
+  <div class="doc doc-contents ">
+  
+      <p><strong>init</strong></p>
 
-        <p><strong>init</strong></p>
-
-            <details class="quote">
-              <summary>Source code in <code>pydagoras/dag_dot.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-14">14</a></span>
+          <details class="quote">
+            <summary>Source code in <code>pydagoras/dag_dot.py</code></summary>
+            <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-14">14</a></span>
 <span class="normal"><a href="#__codelineno-0-15">15</a></span>
 <span class="normal"><a href="#__codelineno-0-16">16</a></span>
 <span class="normal"><a href="#__codelineno-0-17">17</a></span>
@@ -1007,27 +999,29 @@
 </span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">=</span><span class="n">pgv</span><span class="o">.</span><span class="n">AGraph</span><span class="p">(</span><span class="n">directed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">rankdir</span><span class="o">=</span><span class="s1">&#39;LR&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Eg DAG&#39;</span><span class="p">)</span>
 </span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">input_nodes</span><span class="o">=</span><span class="p">[]</span>
 </span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
+          </details>
+  </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
 
+
 <h3 id="pydagoras.dag_dot.DAG.defNode" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">defNode</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">usedby</span><span class="p">,</span> <span class="n">nodetype</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">defNode</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">usedby</span><span class="p">,</span> <span class="n">nodetype</span><span class="p">)</span></code>
 
 </h3>
 
 
-    <div class="doc doc-contents ">
+  <div class="doc doc-contents ">
+  
+      <p>defNode</p>
 
-        <p>defNode</p>
-
-            <details class="quote">
-              <summary>Source code in <code>pydagoras/dag_dot.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-31">31</a></span>
+          <details class="quote">
+            <summary>Source code in <code>pydagoras/dag_dot.py</code></summary>
+            <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-31">31</a></span>
 <span class="normal"><a href="#__codelineno-0-32">32</a></span>
 <span class="normal"><a href="#__codelineno-0-33">33</a></span>
 <span class="normal"><a href="#__codelineno-0-34">34</a></span>
@@ -1061,27 +1055,29 @@
 </span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46"></a>    <span class="k">elif</span> <span class="n">nodetype</span> <span class="o">==</span> <span class="s1">&#39;out&#39;</span><span class="p">:</span>
 </span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
+          </details>
+  </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
 
+
 <h3 id="pydagoras.dag_dot.DAG.makeNode" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">makeNode</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">calc</span><span class="p">,</span> <span class="n">usedby</span><span class="p">,</span> <span class="n">nodetype</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">makeNode</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">calc</span><span class="p">,</span> <span class="n">usedby</span><span class="p">,</span> <span class="n">nodetype</span><span class="p">)</span></code>
 
 </h3>
 
 
-    <div class="doc doc-contents ">
+  <div class="doc doc-contents ">
+  
+      <p>makeNode</p>
 
-        <p>makeNode</p>
-
-            <details class="quote">
-              <summary>Source code in <code>pydagoras/dag_dot.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-23">23</a></span>
+          <details class="quote">
+            <summary>Source code in <code>pydagoras/dag_dot.py</code></summary>
+            <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-23">23</a></span>
 <span class="normal"><a href="#__codelineno-0-24">24</a></span>
 <span class="normal"><a href="#__codelineno-0-25">25</a></span>
 <span class="normal"><a href="#__codelineno-0-26">26</a></span>
@@ -1095,8 +1091,8 @@
 </span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">defNode</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">usedby</span> <span class="o">=</span><span class="n">usedby</span><span class="p">,</span> <span class="n">nodetype</span><span class="o">=</span><span class="n">nodetype</span><span class="p">)</span>
 </span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a>    <span class="k">return</span> <span class="n">n</span>
 </span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
+          </details>
+  </div>
 
 </div>
 
@@ -1104,27 +1100,30 @@
 
   </div>
 
-    </div>
+  </div>
+
 
 </div>
+
 
 
 <div class="doc doc-object doc-function">
 
 
+
 <h2 id="pydagoras.dag_dot.calc" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">calc</span><span class="p">(</span><span class="n">f1</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">calc</span><span class="p">(</span><span class="n">f1</span><span class="p">)</span></code>
 
 </h2>
 
 
-    <div class="doc doc-contents ">
+  <div class="doc doc-contents ">
+  
+      <p>calc</p>
 
-        <p>calc</p>
-
-            <details class="quote">
-              <summary>Source code in <code>pydagoras/dag_dot.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-160">160</a></span>
+          <details class="quote">
+            <summary>Source code in <code>pydagoras/dag_dot.py</code></summary>
+            <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-160">160</a></span>
 <span class="normal"><a href="#__codelineno-0-161">161</a></span>
 <span class="normal"><a href="#__codelineno-0-162">162</a></span>
 <span class="normal"><a href="#__codelineno-0-163">163</a></span>
@@ -1170,8 +1169,8 @@
 </span><span id="__span-0-181"><a id="__codelineno-0-181" name="__codelineno-0-181"></a>            <span class="k">return</span> <span class="n">rtn</span>
 </span><span id="__span-0-182"><a id="__codelineno-0-182" name="__codelineno-0-182"></a>        <span class="k">return</span> <span class="n">f3</span>
 </span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
+          </details>
+  </div>
 
 </div>
 
@@ -1179,7 +1178,7 @@
 
   </div>
 
-    </div>
+  </div>
 
 </div><h2 id="nodepy">node.py</h2>
 
@@ -1189,14 +1188,9 @@
 
 
 <a id="pydagoras.node"></a>
-    <div class="doc doc-contents first">
+  <div class="doc doc-contents first">
 
-
-
-
-
-
-
+  
 
   <div class="doc doc-children">
 
@@ -1212,27 +1206,22 @@
 
 
 <h2 id="pydagoras.node.Node" class="doc doc-heading">
-            <code>Node</code>
+          <code>Node</code>
 
 
 </h2>
 
 
-    <div class="doc doc-contents ">
-            <p class="doc doc-class-bases">
-              Bases: <code>object</code></p>
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code>object</code></p>
 
+  
+      <p>Node</p>
 
-        <p>Node</p>
-
-
-
-
-
-
-              <details class="quote">
-                <summary>Source code in <code>pydagoras/node.py</code></summary>
-                <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-10">10</a></span>
+            <details class="quote">
+              <summary>Source code in <code>pydagoras/node.py</code></summary>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-10">10</a></span>
 <span class="normal"><a href="#__codelineno-0-11">11</a></span>
 <span class="normal"><a href="#__codelineno-0-12">12</a></span>
 <span class="normal"><a href="#__codelineno-0-13">13</a></span>
@@ -1260,11 +1249,12 @@
 </span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">usedby</span><span class="p">:</span>
 </span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a>            <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;= </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, used by, </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">doc</span><span class="p">,</span> <span class="p">[</span><span class="n">n</span><span class="o">.</span><span class="n">doc</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">usedby</span><span class="p">]))</span>
 </span></code></pre></div></td></tr></table></div>
-              </details>
+            </details>
 
-
+  
 
   <div class="doc doc-children">
+
 
 
 
@@ -1277,19 +1267,20 @@
 <div class="doc doc-object doc-function">
 
 
+
 <h3 id="pydagoras.node.Node.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">doc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">calc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">usedby</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nodetype</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">doc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">calc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">usedby</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nodetype</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
 
-    <div class="doc doc-contents ">
+  <div class="doc doc-contents ">
+  
+      <p><strong>init</strong></p>
 
-        <p><strong>init</strong></p>
-
-            <details class="quote">
-              <summary>Source code in <code>pydagoras/node.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-12">12</a></span>
+          <details class="quote">
+            <summary>Source code in <code>pydagoras/node.py</code></summary>
+            <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-12">12</a></span>
 <span class="normal"><a href="#__codelineno-0-13">13</a></span>
 <span class="normal"><a href="#__codelineno-0-14">14</a></span>
 <span class="normal"><a href="#__codelineno-0-15">15</a></span>
@@ -1303,27 +1294,29 @@
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
 </span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">nodetype</span> <span class="o">=</span> <span class="n">nodetype</span>
 </span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
+          </details>
+  </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
 
+
 <h3 id="pydagoras.node.Node.pp" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">pp</span><span class="p">()</span></code>
+          <code class="highlight language-python"><span class="n">pp</span><span class="p">()</span></code>
 
 </h3>
 
 
-    <div class="doc doc-contents ">
+  <div class="doc doc-contents ">
+  
+      <p><strong>pp</strong></p>
 
-        <p><strong>pp</strong></p>
-
-            <details class="quote">
-              <summary>Source code in <code>pydagoras/node.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-20">20</a></span>
+          <details class="quote">
+            <summary>Source code in <code>pydagoras/node.py</code></summary>
+            <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-20">20</a></span>
 <span class="normal"><a href="#__codelineno-0-21">21</a></span>
 <span class="normal"><a href="#__codelineno-0-22">22</a></span>
 <span class="normal"><a href="#__codelineno-0-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="k">def</span> <span class="nf">pp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1331,8 +1324,8 @@
 </span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">usedby</span><span class="p">:</span>
 </span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a>        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;= </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, used by, </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">doc</span><span class="p">,</span> <span class="p">[</span><span class="n">n</span><span class="o">.</span><span class="n">doc</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">usedby</span><span class="p">]))</span>
 </span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
+          </details>
+  </div>
 
 </div>
 
@@ -1340,7 +1333,8 @@
 
   </div>
 
-    </div>
+  </div>
+
 
 </div>
 
@@ -1349,7 +1343,7 @@
 
   </div>
 
-    </div>
+  </div>
 
 </div>
 
@@ -1488,7 +1482,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "navigation.tabs", "navigation.top", "content.tabs.link"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      <script src="../assets/javascripts/bundle.bd41221c.min.js"></script>
       
         <script src="../javascripts/feedback.js"></script>
       
