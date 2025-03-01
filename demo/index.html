@@ -13,10 +13,10 @@
         <link rel="canonical" href="http://pydagoras.com/demo/">
       
       
-        <link rel="prev" href="../example_use/">
+        <link rel="prev" href="../welcome/">
       
       
-        <link rel="next" href="../test/">
+        <link rel="next" href="../example_use/">
       
       
       <link rel="icon" href="../images/favicon.png">
@@ -207,14 +207,16 @@
         
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../package/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
     
   
-  Package
+  Demo
 
       </a>
     </li>
@@ -241,16 +243,14 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../package/" class="md-tabs__link">
         
   
     
   
-  Demo
+  Package
 
       </a>
     </li>
@@ -359,18 +359,28 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../package/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Package
+    Demo
   </span>
   
 
       </a>
+      
     </li>
   
 
@@ -399,28 +409,18 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../package/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Demo
+    Package
   </span>
   
 
       </a>
-      
     </li>
   
 
@@ -503,9 +503,10 @@
 
 <h1 id="demo">Demo</h1>
 <p>The demo site <a href="https://www.pydagoras.com/">www.pydagoras.com</a> provides the opertunity to update DAG inputs and see the DAG update.</p>
-<p>To connect to the backend, which will provide the DAG image press the connect button, the connection status will then be shown.
-   <img alt="basic_dag" src="../images/connect.png" title="basic_dag" /></p>
-<p>The following tabs show screen shots of the 3 example DAG images.</p>
+<p>First it is required to make a websocket connection, this will supply the backend with input values, and allow the browser to recieve updated DAGs.
+To make this connection click the <code>connect</code> button, and see the connection status appear.
+   <img alt="connect" src="../images/connect.png" title="connect" /></p>
+<p>The following tabs match the tabs in the browser and show screen shots of the 3 example DAG images.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Basic DAG</label><label for="__tabbed_1_2">Long calculation</label><label for="__tabbed_1_3">Duplicate nodes</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -519,6 +520,9 @@
 </div>
 </div>
 </div>
+<p>Below each DAG there are input boxes for the DAG input values.
+Depending on the state of the toggle, values can be entered one at a time, or in bulk.
+When the DAG has been recaluclated the image of the DAG will be refreshed.</p>
 <p>The video below shows the demo site being used, where;</p>
 <ul>
 <li>Single then multiple updates are made to a basic DAG using the GUI.</li>
