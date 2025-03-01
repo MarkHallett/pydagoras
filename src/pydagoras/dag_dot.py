@@ -1,4 +1,4 @@
-# dag_dot
+# dag_dot.py
 
 import time
 import logging
@@ -6,12 +6,13 @@ import pygraphviz as pgv
 
 logger = logging.getLogger()
 
+
 class DAG(object): # functionality
-    '''Base DAG'''
+    '''Base DAG '''
     __shared_state = {}  # would be nice to use a collections.OrderedDict()
-    #__filename = None
 
     def __init__(self, filename):
+        '''__init__'''
         self.__dict__ = self.__shared_state
 
         self.filename = filename
@@ -20,13 +21,15 @@ class DAG(object): # functionality
         #print( self.G.to_string() )
 
     def makeNode(self,label,calc,usedby,nodetype):
-        n = Node(label,calc,usedby,nodetype)
+        '''makeNode'''
+        n = pydagoras.Node(label,calc,usedby,nodetype)
         if nodetype == 'in':
             self.input_nodes.append(n)
         self.defNode(n,usedby =usedby, nodetype=nodetype)
         return n
 
     def defNode(self,node,usedby,nodetype):
+        '''defNode'''
         doc = node.doc
         if not doc:
             doc = 'qwerty'
@@ -137,7 +140,7 @@ class DAG(object): # functionality
         # use doc string on class
         print (self.__doc__)
         for k, v in self.__dict__ .items():
-            if type(v) == type(Node()):
+            if type(v) == type(pydagoras.Node()):
                 print (k,)
                 v.pp()
 
@@ -149,12 +152,13 @@ class DAG(object): # functionality
     def ppOutputs(self):
         print (self.__doc__, ' Outputs')
         for k, v in self.__dict__ .items():
-            if type(v) == type(Node()):
+            if type(v) == type(pydagoras.Node()):
                 if v.usedby == []:
                     print (k,)
                     print ('=', v.value, v.doc)
 
 def calc(f1):
+        ''' calc '''
         def f3(self,*args, **kwargs):
             node=kwargs['node']
 
@@ -177,20 +181,3 @@ def calc(f1):
             return rtn
         return f3
 
-
-
-class Node(object):
-    def __init__(self,doc=None, calc=None,usedby=None, nodetype=None):
-        self.calc = calc
-        self.doc = doc
-        self.usedby = usedby
-        self.value = None
-        self.nodetype = nodetype
-
-    def pp(self):
-        if self.usedby:
-            print ("= %s, %s, used by, %s" %( self.value , self.doc, [n.doc for n in self.usedby]))
-        #else:
-        #    print "= %s, %s, 'output node', %s" %( self.value , self.doc,  self.calc.__doc__)
-
-#----------------------------------------------------------

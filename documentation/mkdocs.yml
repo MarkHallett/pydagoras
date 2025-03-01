@@ -22,9 +22,9 @@ plugins:
 
 nav:
   - Welcome: welcome.md
-  - Package: package.md
-  - Example use: example_use.md
   - Demo: demo.md
+  - Example use: example_use.md
+  - Package: package.md
   - Code reference: reference/
   - test.md
 
@@ -48,7 +48,7 @@ markdown_extensions:
 extra:
   analytics:
     provider: google
-    property: G-XXXXXXXX
+    property: G-XXXXXXX
     feedback:
       title: Was this page helpful?
       ratings:
@@ -62,7 +62,7 @@ extra:
           data: 0
           note: >- 
             Thanks for your feedback! Help us improve this page by
-            using our <a href="https://forms.gle/XXXXXXX" target="_blank" rel="noopener">feedback form</a>.  
+            using our <a href="https://forms.gle/XXXXXXXXX" target="_blank" rel="noopener">feedback form</a>.  
 
 # footer links
   social:
