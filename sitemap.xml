@@ -2,47 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>http://pydagoras.com/</loc>
-         <lastmod>2025-03-22</lastmod>
+         <lastmod>2025-05-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://pydagoras.com/demo/</loc>
-         <lastmod>2025-03-22</lastmod>
+         <lastmod>2025-05-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://pydagoras.com/example_use/</loc>
-         <lastmod>2025-03-22</lastmod>
+         <lastmod>2025-05-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://pydagoras.com/more_docs/</loc>
-         <lastmod>2025-03-22</lastmod>
+         <lastmod>2025-05-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://pydagoras.com/package/</loc>
-         <lastmod>2025-03-22</lastmod>
+         <lastmod>2025-05-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://pydagoras.com/reference/</loc>
-         <lastmod>2025-03-22</lastmod>
+         <lastmod>2025-05-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://pydagoras.com/test/</loc>
-         <lastmod>2025-03-22</lastmod>
+         <lastmod>2025-05-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://pydagoras.com/tobedone/</loc>
-         <lastmod>2025-03-22</lastmod>
+         <lastmod>2025-05-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://pydagoras.com/welcome/</loc>
-         <lastmod>2025-03-22</lastmod>
+         <lastmod>2025-05-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
