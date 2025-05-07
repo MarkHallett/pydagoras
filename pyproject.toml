@@ -8,7 +8,8 @@ dynamic = ["version"]
 description = 'A Direct Acyclic Graph lib'
 readme = "README.md"
 requires-python = ">=3.8"
-license = "MIT"
+license = {text = "MIT"}
+homepage = "https://pydagoras.com"
 keywords = []
 authors = [
   { name = "Mark Hallett", email = "pydagoras@markhallett.co.uk" },

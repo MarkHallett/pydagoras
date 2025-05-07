@@ -1,60 +1,52 @@
-# dag_dot.py
+# dag_dot
 
-import time
 import logging
 import pygraphviz as pgv
 
 logger = logging.getLogger()
 
+from .node import Node
 
-class DAG(object): # functionality
-    '''Base DAG '''
-    __shared_state = {}  # would be nice to use a collections.OrderedDict()
+class DAG(object):
+    '''Base DAG'''
+    __shared_state = {} 
 
-    def __init__(self, filename):
-        '''__init__'''
+    def __init__(self, label):
         self.__dict__ = self.__shared_state
+        if hasattr(self, 'o'):
+            return
 
-        self.filename = filename
-        self.G=pgv.AGraph(directed=True,strict=True,rankdir='LR', label='Eg DAG')
+        self.G=pgv.AGraph(directed=True, strict=True, rankdir='LR', label=label, labelloc="t")
         self.input_nodes=[]
-        #print( self.G.to_string() )
 
-    def makeNode(self,label,calc,usedby,nodetype):
-        '''makeNode'''
-        n = pydagoras.Node(label,calc,usedby,nodetype)
+
+    def makeNode(self,label,calc,usedby,nodetype, display_name=None, tooltip=''):
+        n = Node(label,calc,usedby,nodetype,display_name,tooltip)
         if nodetype == 'in':
             self.input_nodes.append(n)
-        self.defNode(n,usedby =usedby, nodetype=nodetype)
+        self.defNode(n,usedby, nodetype, tooltip)
         return n
 
-    def defNode(self,node,usedby,nodetype):
-        '''defNode'''
-        doc = node.doc
-        if not doc:
-            doc = 'qwerty'
-        
+
+    def defNode(self,node,usedby,nodetype,tooltip):
+        doc = node.display_name
         if nodetype == 'in':
-            self.G.add_node(doc, shape="square")
-            #node= self.AddInNode(doc)
+            self.G.add_node(doc, shape="square", tooltip=tooltip)
             for n in usedby:
-                self.AddEdge(doc,n.doc)
+                self.AddEdge(doc,n.display_name)
         elif nodetype == 'internal':
-            #node= self.AddNode(doc,self.calcRateA)
+            self.G.add_node(doc, tooltip=tooltip)
             for n in usedby:
-                self.AddEdge(doc,n.doc)
+                self.AddEdge(doc,n.display_name)
         elif nodetype == 'out':
             self.G.add_node(doc, color="white")
 
 
     def AddEdge(self,node1,node2):
-        self.G.add_edge(node1,node2,label='Undefined')
-        #print( self.G.to_string() )
+        self.G.add_edge(node1,node2,label='Undefined', fontname="Courier")
 
-    def update_node(self,node1,node2,value):
-        #if node2.nodetype == 'out':
-        #    mr_mess_bus.publish(node.doc,value)
 
+    def update_node(self,node1,node2,value,tooltip='not set XXX'):
         color = 'green'
         fontcolor='blue'
         if value == '-':
@@ -63,47 +55,17 @@ class DAG(object): # functionality
             fontcolor='red'
             color='red'
 
-        #self.G.add_node(node1,color=color,fontcolor=fontcolor,tooltip='hello')
-        #A [URL="[A|home]" tooltip="A link"]
-        self.G.add_node(node1,color=color,fontcolor=fontcolor,URL=node1+'.html',tooltip=node1)
-        self.G.add_edge(node1,node2, label=value,fontcolor=fontcolor,color=color)
-        print('added node and edge')
-        #print( self.G.to_string() )
-        self.dot_pp()
-
-        #t = threading.Timer(1, self.fade, args=(node1, node2,value,color) )
-        #t.start()
-
-    def fade(self,node1, node2,value,color):
-        print ('FADE')
-        1/0
-        fontcolor=color
-        color = color
-        self.G.add_node(node1,color=color,fontcolor=fontcolor,URL=node1+'.html',tooltip=node1)
-        self.G.add_edge(node1,node2, label=value,fontcolor=fontcolor,color=color)
-        self.dot_pp()
-        print('fade')
+        self.G.add_node(node1,color=color,fontcolor=fontcolor,tooltip=tooltip)
+        self.G.add_edge(node1,node2, label=value,fontcolor=fontcolor,color=color, fontname="Courier")
 
 
-
-    def set_input(self,doc,value):
+    def set_input(self,node_id,value):
         for node in self.input_nodes:
-            if node.doc == doc:
-                logger.info ('set %s %s' %(node.doc,value))
+            if node.node_id == node_id:
                 for usedby in node.usedby:
-                     self.update_node(doc,usedby.doc, value=value)
+                    self.update_node(node.display_name,usedby.node_id, value=value, tooltip=node.tooltip)
                 self.setValue(node,value)
-                
-                graph_def = self.G.to_string() 
-                #print( graph_def )
-                return graph_def
 
-    def dot_pp(self):
-        pass
-        #print 'print dot and convert to png'
-        #self.G.layout(prog='dot') # layout with default (neato)
-        #print 'Draw'
-        #self.G.draw(self.filename)
 
     def setValue(self,n,v):
         if v == n.value:
@@ -114,70 +76,54 @@ class DAG(object): # functionality
         for u in n.usedby:
            if u.calc == None:
                continue
-           new_value = None
            try:
-              #u.pp()
               new_value = u.calc(node=n)
            except Exception as e:
+              print('Error in setValue')
               print (str(e))
 
            self.setValue(u,new_value)
 
-           # if output print
-        print ('SET VALUE used by', n.usedby[0].doc)
+        if not n.usedby:
+            return
+
         if n.usedby[0].usedby == []:
-            #print '!! SET VALUE OF OUTPUT'
-            msg = 'update dag_dot.py %s %s' %(n.usedby[0].doc, n.value)
+            msg = 'update dag_dot.py %s %s' %(n.usedby[0].node_id, n.value)
             logger.info (msg)
-            #print msg
-            #print('dont publish')
-            #print( self.G.to_string() )
-            #publish.run(n.usedby[0].doc,str(n.value))
-            #mr_mess_bus.publish(n.usedby[0].doc,str(n.value))
 
-
-    def pp(self): # must be over ridden by a borg
-        # use doc string on class
-        print (self.__doc__)
-        for k, v in self.__dict__ .items():
-            if type(v) == type(pydagoras.Node()):
-                print (k,)
-                v.pp()
 
     def ppInputs(self):
-        print (self.__doc__, ' Inputs')
         for n in self.input_nodes:
             n.pp()
 
-    def ppOutputs(self):
-        print (self.__doc__, ' Outputs')
+
+    def ppOutput(self):
         for k, v in self.__dict__ .items():
-            if type(v) == type(pydagoras.Node()):
+            if type(v) == type(Node()):
                 if v.usedby == []:
-                    print (k,)
-                    print ('=', v.value, v.doc)
+                    print (f'{v.node_id} = {v.value}')
 
-def calc(f1):
-        ''' calc '''
-        def f3(self,*args, **kwargs):
-            node=kwargs['node']
 
-            for u_node in node.usedby:
-                for o_node in u_node.usedby:
-                    self.update_node(u_node.doc,o_node.doc, value='-')
+def calc(f1): # decorator deffinition
+    def f3(self,*args, **kwargs):
+        node=kwargs['node']
 
-            try:
-                rtn = f1(self,*args, **kwargs)
-            except Exception as e:
-                print ('Error in %s: %s' %(u_node.doc,str(e)))
-                #rtn = str(e)
-                rtn = 'e'
+        for u_node in node.usedby:
+            for o_node in u_node.usedby:
+                self.update_node(u_node.node_id,o_node.node_id, value='-', tooltip=node.tooltip)
 
-            for u_node in node.usedby:
-                for o_node in u_node.usedby:
-                    self.update_node(u_node.doc,o_node.doc, value=rtn)
+        try:
+            rtn = f1(self,*args, **kwargs)
+            print(f'RETURN {rtn=}')
+        except Exception as e:
+            print ('Error in %s: %s' %(u_node.node_id,str(e)))
+            #rtn = str(e)
+            rtn = 'e'
 
-            self.dot_pp()
-            return rtn
-        return f3
+        for u_node in node.usedby:
+            for o_node in u_node.usedby:
+                self.update_node(u_node.node_id,o_node.node_id, value=rtn, tooltip=u_node.tooltip)
+
+        return rtn
+    return f3
 
