@@ -114,10 +114,11 @@ def calc(f1): # decorator deffinition
 
         try:
             rtn = f1(self,*args, **kwargs)
-            print(f'RETURN {rtn=}')
+            if node.usedby[0].nodetype == 'out':
+                print(f'OUT: {node.value}')
+
         except Exception as e:
             print ('Error in %s: %s' %(u_node.node_id,str(e)))
-            #rtn = str(e)
             rtn = 'e'
 
         for u_node in node.usedby:
