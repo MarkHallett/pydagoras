@@ -3,22 +3,23 @@
 import logging
 import pygraphviz as pgv
 
-logger = logging.getLogger()
+logger = logging.getLogger(__name__)
 
 from .node import Node
 
 class DAG(object):
     '''Base DAG'''
-    __shared_state = {} 
+    #__shared_state = {} 
 
     def __init__(self, label):
-        self.__dict__ = self.__shared_state
-        if hasattr(self, 'o'):
-            return
+        logger.info(f'creating {label=}')
+        #self.__dict__ = self.__shared_state
+        #if hasattr(self, 'o'):
+        #    return
+        self.label = label
 
         self.G=pgv.AGraph(directed=True, strict=True, rankdir='LR', label=label, labelloc="t")
         self.input_nodes=[]
-
 
     def makeNode(self,label,calc,usedby,nodetype, display_name=None, tooltip=''):
         n = Node(label,calc,usedby,nodetype,display_name,tooltip)
@@ -26,7 +27,6 @@ class DAG(object):
             self.input_nodes.append(n)
         self.defNode(n,usedby, nodetype, tooltip)
         return n
-
 
     def defNode(self,node,usedby,nodetype,tooltip):
         doc = node.display_name
@@ -47,17 +47,16 @@ class DAG(object):
 
 
     def update_node(self,node1,node2,value,tooltip='not set XXX'):
-        color = 'green'
-        fontcolor='blue'
-        if value == '-':
-            fontcolor='black'
-        elif value in ( 0, 'e'):
-            fontcolor='red'
-            color='red'
-
+        fontcolor, color = self.get_colors(value)
         self.G.add_node(node1,color=color,fontcolor=fontcolor,tooltip=tooltip)
         self.G.add_edge(node1,node2, label=value,fontcolor=fontcolor,color=color, fontname="Courier")
-
+ 
+    # special cases
+    @classmethod
+    def get_colors(cls, value):
+        if value in ( 'e',):
+            return 'red', 'red'
+        return 'blue', 'green'
 
     def set_input(self,node_id,value):
         for node in self.input_nodes:
@@ -81,6 +80,7 @@ class DAG(object):
            except Exception as e:
               print('Error in setValue')
               print (str(e))
+              new_value = 'e' # ??
 
            self.setValue(u,new_value)
 
