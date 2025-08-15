@@ -42,6 +42,7 @@ class Node(object):
 if __name__ == '__main__':
     print('##########################################')
     def calc_simple(node=None):
+        # calc_simple
         return DAG().get_value(node.node_id) + 2
 
     # (self, node_id=None, calc=None, usedby=None, nodetype=None, display_name=None, tooltip='notset'):
@@ -50,9 +51,15 @@ if __name__ == '__main__':
     my_node = Node(node_id='a', nodetype='in')
     my_node.dag.set_value('a', 1)
     my_node.pp()  # Output: Input a = 1
-
-    my_node2 = Node(node_id='b', nodetype='out')
+    
+    my_node2 = Node(node_id='b', nodetype='internal', calc=calc_simple, usedby=[my_node])
     my_node2.dag.set_value('b', 2)
     my_node2.pp()  # Output: Input b = 2
 
+
+    my_node2 = Node(node_id='c', nodetype='out')
+    my_node2.dag.set_value('c', 2)
+    my_node2.pp()  # Output: Input b = 2
+
     print(DAG().values)  # Output: {'a': 1, 'b': 2}
+
