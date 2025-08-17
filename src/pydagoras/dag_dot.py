@@ -3,7 +3,6 @@
 import logging
 import pygraphviz as pgv
 from pydagoras.dag import DAG
-#from .node import Node
 from pydagoras.node import Node
 
 logger = logging.getLogger(__name__)
@@ -20,9 +19,18 @@ class DAG_dot:
         self.internal_nodes = []
         self.output_node = None
         self.nodes = []  # List to keep track of all nodes
+
+
+        @calc
+        def calc_out(node=None):
+            return self.n_out.get_value() 
+
+        self.n_out = self.makeNode('out', calc=calc_out, usedby=[], nodetype='out') 
         
 
-    def makeNode(self,label,calc,usedby,nodetype, display_name=None, tooltip=''):
+    def makeNode(self,label,calc,usedby=None, nodetype='internal', display_name=None, tooltip=''):
+        if usedby is None:
+            usedby = [self.n_out]
         n = Node(label,calc,usedby,nodetype,display_name,tooltip)
         if nodetype == 'in':
             self.input_nodes.append(n)
@@ -82,7 +90,6 @@ class DAG_dot:
 
         # build the DAG
         n.set_value(v) 
-        #self.dag.set_value(n.node_id, v)
         x = self.dag.get_value(n.node_id)
 
         for u in n.usedby:
@@ -163,7 +170,7 @@ def calc(f1): # decorator deffinition
             print('o'*20)
             u_node.set_tooltip(str(e))  # Set the tooltip of the node
 
-        print('checking nodes to update....')
+        #print('checking nodes to update....')
         for u_node in node.usedby:
             print(f'Updating node: {u_node.node_id} with value: {rtn}')
             dag.set_input(u_node.node_id, rtn)
@@ -172,24 +179,18 @@ def calc(f1): # decorator deffinition
     return f3
 
 if __name__ == '__main__':
-    print('OK #######################################')
+    print('#######################################')
 
-    @calc
-    def calc_out(node=None):
-        return n3.get_value() 
     @calc
     def calc_tripple(node=None):
         return node.get_value() * 3 
 
     dag = DAG_dot(label='Test DAG')
-    n3 = dag.makeNode('out', calc=calc_out, usedby=[], nodetype='out') #, display_name='Output C')
-    n2 = dag.makeNode('b', calc=calc_tripple, usedby=[n3], nodetype='internal') #, display_name='Internal B')
+    n2 = dag.makeNode('b', calc=calc_tripple)
     n1 = dag.makeNode('a', calc=None, usedby=[n2], nodetype='in') #, display_name='Input A')
 
     print('Updates --------------') 
     dag.set_input('a', 10)
-    #dag.set_input('out', 40)
-   # n1.set_value(11)
     dag.pp()
 
     print('Graph representation:')  
