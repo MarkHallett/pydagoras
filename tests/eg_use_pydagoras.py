@@ -1,8 +1,5 @@
 # eg_use_pydagoras.py
-
-import os
-os.system('pip install pydagoras')  # Ensure pydagoras is imported to initialize it
-
+# a script to provide an example of creating and using a DAG using pydagoras
 
 from pydagoras.dag_dot import DAG_dot, calc
 
