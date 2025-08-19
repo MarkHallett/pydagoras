@@ -7,7 +7,7 @@ from pydagoras.dag import DAG
 logger = logging.getLogger()
 
 
-class Node(object):
+class Node:
     def __init__(self, node_id=None, calc=None, usedby=None, nodetype=None, display_name=None, tooltip='notset'):
         self.calc = calc
         self.node_id = node_id

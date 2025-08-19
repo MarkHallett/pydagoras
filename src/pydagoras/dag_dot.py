@@ -1,4 +1,5 @@
 # dag_dot
+from functools import wraps
 
 import logging
 import pygraphviz as pgv
@@ -116,7 +117,7 @@ class DAG_dot:
             # not shown!
             msg = 'update dag_dot.py %s %s' %(n.usedby[0].node_id, n.get_value())
             logger.info (msg)
-            print(msg)
+            #print(msg)
 
 
     def ppInputs(self):
@@ -152,6 +153,7 @@ class DAG_dot:
 
 
 def calc(f1): # decorator deffinition
+    @wraps(f1)
     def f3(dag, *args, **kwargs):
         node=kwargs['node']
 
@@ -172,7 +174,7 @@ def calc(f1): # decorator deffinition
 
         #print('checking nodes to update....')
         for u_node in node.usedby:
-            print(f'Updating node: {u_node.node_id} with value: {rtn}')
+            #print(f'Updating node: {u_node.node_id} with value: {rtn}')
             dag.set_input(u_node.node_id, rtn)
 
         return rtn

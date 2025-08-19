@@ -22,11 +22,11 @@ plugins:
 
 nav:
   - Welcome: welcome.md
-  - Demo: demo.md
-  - Example use: example_use.md
   - Package: package.md
-  - Code reference: reference/
-  - test.md
+  - Example script: example_script.md
+  - Demo: demo.md
+  - Example app: example_app.md
+  - Code reference: reference.md
 
 markdown_extensions:
   # annotations
