@@ -10,9 +10,13 @@
       
       
       
-        <link rel="canonical" href="http://pydagoras.com/tobedone/">
+        <link rel="canonical" href="http://pydagoras.com/example_script/">
       
       
+        <link rel="prev" href="../package/">
+      
+      
+        <link rel="next" href="../demo/">
       
       
       <link rel="icon" href="../images/favicon.png">
@@ -20,7 +24,7 @@
     
     
       
-        <title>Tobedone - pydagoras</title>
+        <title>Example script - pydagoras</title>
       
     
     
@@ -102,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tobedone
+              Example script
             
           </span>
         </div>
@@ -215,14 +219,16 @@
         
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../example_use/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
     
   
-  Example use
+  Example script
 
       </a>
     </li>
@@ -251,12 +257,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="../reference/" class="md-tabs__link">
+      <a href="../example_app/" class="md-tabs__link">
         
   
     
   
-  Code reference
+  Example app
 
       </a>
     </li>
@@ -268,12 +274,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="../test/" class="md-tabs__link">
+      <a href="../reference/" class="md-tabs__link">
         
   
     
   
-  Note
+  Code reference
 
       </a>
     </li>
@@ -368,18 +374,26 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../example_use/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Example use
+    Example script
   </span>
   
 
       </a>
+      
     </li>
   
 
@@ -411,11 +425,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/" class="md-nav__link">
+      <a href="../example_app/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Code reference
+    Example app
   </span>
   
 
@@ -431,11 +445,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../test/" class="md-nav__link">
+      <a href="../reference/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Note
+    Code reference
   </span>
   
 
@@ -478,9 +492,164 @@
   
 
 
-  <h1>Tobedone</h1>
+  <h1>Example script</h1>
 
-<p>to be done</p>
+<p>In the pydagoras github repository folder <code>tests</code> includes the script <code>eg_use_pydagoras.py</code></p>
+<p>The following code will create the simple DAG
+<img alt="image" src="../images/eg_dag.png" /></p>
+<p>Import the necessary code from pydagoras
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="kn">from</span> <span class="nn">pydagoras.dag_dot</span> <span class="kn">import</span> <span class="n">DAG_dot</span><span class="p">,</span> <span class="n">calc</span>
+</span></code></pre></div></td></tr></table></div>
+<br>
+<br>
+Define the node calculations
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a>    <span class="nd">@calc</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a>    <span class="k">def</span> <span class="nf">tripple</span><span class="p">(</span><span class="n">node</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a>        <span class="k">return</span> <span class="n">node</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span> <span class="o">*</span> <span class="mi">3</span>
+</span></code></pre></div></td></tr></table></div>
+<br>
+<br>
+Create the DAG
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a>    <span class="n">dag</span> <span class="o">=</span> <span class="n">DAG_dot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Eg DAG&#39;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<br>
+<br>
+Define the input node and single calculation node
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15"></a>    <span class="n">n2</span> <span class="o">=</span> <span class="n">dag</span><span class="o">.</span><span class="n">makeNode</span><span class="p">(</span><span class="s1">&#39;x3&#39;</span><span class="p">,</span> <span class="n">calc</span><span class="o">=</span><span class="n">tripple</span><span class="p">,</span> <span class="n">tooltip</span><span class="o">=</span><span class="s1">&#39;multiply&#39;</span><span class="p">)</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16"></a>    <span class="n">n1</span> <span class="o">=</span> <span class="n">dag</span><span class="o">.</span><span class="n">makeNode</span><span class="p">(</span><span class="s1">&#39;In&#39;</span><span class="p">,</span> <span class="n">calc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">usedby</span><span class="o">=</span><span class="p">[</span><span class="n">n2</span><span class="p">],</span> <span class="n">nodetype</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<br>
+<br>
+Print the initial DAG 
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-36">36</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">dag</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span>  
+</span></code></pre></div></td></tr></table></div>
+<br>
+<br>
+Update the DAG input
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19"></a>    <span class="n">dag</span><span class="o">.</span><span class="n">set_input</span><span class="p">(</span><span class="s1">&#39;In&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<br>
+<br>
+Print the final DAG 
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-36">36</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-36"><a id="__codelineno-6-36" name="__codelineno-6-36"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">dag</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span> 
+</span></code></pre></div></td></tr></table></div></p>
+<p>Putting it all together...</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">eg_use_pydagoras.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span>
+<span class="normal"><a href="#__codelineno-7-13">13</a></span>
+<span class="normal"><a href="#__codelineno-7-14">14</a></span>
+<span class="normal"><a href="#__codelineno-7-15">15</a></span>
+<span class="normal"><a href="#__codelineno-7-16">16</a></span>
+<span class="normal"><a href="#__codelineno-7-17">17</a></span>
+<span class="normal"><a href="#__codelineno-7-18">18</a></span>
+<span class="normal"><a href="#__codelineno-7-19">19</a></span>
+<span class="normal"><a href="#__codelineno-7-20">20</a></span>
+<span class="normal"><a href="#__codelineno-7-21">21</a></span>
+<span class="normal"><a href="#__codelineno-7-22">22</a></span>
+<span class="normal"><a href="#__codelineno-7-23">23</a></span>
+<span class="normal"><a href="#__codelineno-7-24">24</a></span>
+<span class="normal"><a href="#__codelineno-7-25">25</a></span>
+<span class="normal"><a href="#__codelineno-7-26">26</a></span>
+<span class="normal"><a href="#__codelineno-7-27">27</a></span>
+<span class="normal"><a href="#__codelineno-7-28">28</a></span>
+<span class="normal"><a href="#__codelineno-7-29">29</a></span>
+<span class="normal"><a href="#__codelineno-7-30">30</a></span>
+<span class="normal"><a href="#__codelineno-7-31">31</a></span>
+<span class="normal"><a href="#__codelineno-7-32">32</a></span>
+<span class="normal"><a href="#__codelineno-7-33">33</a></span>
+<span class="normal"><a href="#__codelineno-7-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1"># eg_use_pydagoras.py</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="c1"># a script to provide an example of creating and using a DAG using pydagoras</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="kn">from</span> <span class="nn">pydagoras.dag_dot</span> <span class="kn">import</span> <span class="n">DAG_dot</span><span class="p">,</span> <span class="n">calc</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;#######################################&#39;</span><span class="p">)</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a>    <span class="nd">@calc</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a>    <span class="k">def</span> <span class="nf">tripple</span><span class="p">(</span><span class="n">node</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12"></a>        <span class="k">return</span> <span class="n">node</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span> <span class="o">*</span> <span class="mi">3</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13"></a>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14"></a>    <span class="n">dag</span> <span class="o">=</span> <span class="n">DAG_dot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Eg DAG&#39;</span><span class="p">)</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15"></a>    <span class="n">n2</span> <span class="o">=</span> <span class="n">dag</span><span class="o">.</span><span class="n">makeNode</span><span class="p">(</span><span class="s1">&#39;x3&#39;</span><span class="p">,</span> <span class="n">calc</span><span class="o">=</span><span class="n">tripple</span><span class="p">,</span> <span class="n">tooltip</span><span class="o">=</span><span class="s1">&#39;multiply&#39;</span><span class="p">)</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16"></a>    <span class="n">n1</span> <span class="o">=</span> <span class="n">dag</span><span class="o">.</span><span class="n">makeNode</span><span class="p">(</span><span class="s1">&#39;In&#39;</span><span class="p">,</span> <span class="n">calc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">usedby</span><span class="o">=</span><span class="p">[</span><span class="n">n2</span><span class="p">],</span> <span class="n">nodetype</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17"></a>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Initial DAG&#39;</span><span class="p">)</span>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">dag</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span> <span class="c1"># (1)</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20"></a>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Updates --------------&#39;</span><span class="p">)</span>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22"></a>    <span class="n">dag</span><span class="o">.</span><span class="n">set_input</span><span class="p">(</span><span class="s1">&#39;In&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23"></a>
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outputs --------------&#39;</span><span class="p">)</span>
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25"></a>    <span class="n">dag</span><span class="o">.</span><span class="n">ppInputs</span><span class="p">()</span> <span class="c1"># (2)</span>
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26"></a>    <span class="n">dag</span><span class="o">.</span><span class="n">ppOutput</span><span class="p">()</span> <span class="c1"># (3)</span>
+</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27"></a>    <span class="n">dag</span><span class="o">.</span><span class="n">pp</span><span class="p">()</span> 
+</span><span id="__span-7-28"><a id="__codelineno-7-28" name="__codelineno-7-28"></a>
+</span><span id="__span-7-29"><a id="__codelineno-7-29" name="__codelineno-7-29"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Final DAG&#39;</span><span class="p">)</span>
+</span><span id="__span-7-30"><a id="__codelineno-7-30" name="__codelineno-7-30"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">dag</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span> <span class="c1"># (4)</span>
+</span><span id="__span-7-31"><a id="__codelineno-7-31" name="__codelineno-7-31"></a>
+</span><span id="__span-7-32"><a id="__codelineno-7-32" name="__codelineno-7-32"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span><span id="__span-7-33"><a id="__codelineno-7-33" name="__codelineno-7-33"></a>    <span class="n">run</span><span class="p">()</span>
+</span><span id="__span-7-34"><a id="__codelineno-7-34" name="__codelineno-7-34"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Done.&#39;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<ol>
+<li><pre>strict digraph  {
+    graph [label="Eg DAG",
+        labelloc=t,
+        rankdir=LR
+    ];
+    out  [color=white];
+    x3   [tooltip=multiply];
+    x3 -&gt; out    [fontname=Courier,
+        label=Undefined];
+    In   [shape=square];
+    In -&gt; x3     [fontname=Courier,
+        label=Undefined];
+}</pre>
+<img alt="image" src="../images/eg_dag_start.png" /></li>
+<li><pre>DAG: Eg DAG
+Inputs:
+NODE: in, id:In, value:10
+      display_name:In tooltip:
+      calc: None usedby:x3</pre></li>
+<li>comment y I'm a code annotation! I can contain <code>code</code>, __formatted</li>
+<li><pre>strict digraph  {
+    graph [label="Eg DAG",
+        labelloc=t,
+        rankdir=LR
+    ];
+    out  [color=white];
+    x3   [color=green,
+        fontcolor=blue,
+        tooltip=multiply];
+    x3 -&gt; out    [color=green,
+        fontcolor=blue,
+        fontname=Courier,
+        label=30];
+    In   [color=green,
+        fontcolor=blue,
+        shape=square];
+    In -&gt; x3     [color=green,
+        fontcolor=blue,
+        fontname=Courier,
+        label=10];
+}</pre>
+<img alt="image" src="../images/eg_graph.png" /></li>
+</ol>
+<hr />
 
 
 
