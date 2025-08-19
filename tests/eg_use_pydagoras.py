@@ -1,5 +1,5 @@
 # eg_use_pydagoras.py
-# a script to provide an example of creating and using a DAG using pydagoras
+# a script to provide an example of creating and using a DAG using pydagoras
 
 from pydagoras.dag_dot import DAG_dot, calc
 
@@ -15,17 +15,18 @@ def run():
     n2 = dag.makeNode('x3', calc=tripple, tooltip='multiply')
     n1 = dag.makeNode('In', calc=None, usedby=[n2], nodetype='in')
 
+    print('Initial DAG')
+    print(dag.G.to_string()) # 
     print('Updates --------------')
     dag.set_input('In', 10)
 
     print('Outputs --------------')
-    dag.ppInputs()
-    dag.ppOutput()
+    dag.ppInputs() # 
+    dag.ppOutput() # 
     dag.pp()
 
-    print('Graph representation:')
-    print(dag.G.to_string())  # Print the graph representation
-
+    print('Final DAG')
+    print(dag.G.to_string()) # 
 
 if __name__ == '__main__':
     run()

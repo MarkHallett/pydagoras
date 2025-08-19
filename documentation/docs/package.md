@@ -15,6 +15,6 @@ To download and install a particular version eg 0.0.13 from github use
 !!! warning
     It is good practice to install into a virtual env
 
-The `pygraphviz` dependency will also be installed.
+The `pygraphviz` dependency will also be installed. This package is used to create the DAG images.
 
 Also included in the package source (aviailable from github) are two files in the test folder, which are a file containing unit tests, and a script that shows basic use of the package.
