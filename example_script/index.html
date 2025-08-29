@@ -590,7 +590,7 @@ Putting it all together...</p>
 </span><span id="__span-7-34"><a id="__codelineno-7-34" name="__codelineno-7-34"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Done.&#39;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <ol>
-<li><pre>strict digraph  {
+<li><img alt="image" src="../images/eg_dag_start.png" /> <pre>strict digraph  {
     graph [label="Eg DAG",
         labelloc=t,
         rankdir=LR
@@ -602,15 +602,17 @@ Putting it all together...</p>
     In   [shape=square];
     In -&gt; x3     [fontname=Courier,
         label=Undefined];
-}</pre>
-<img alt="image" src="../images/eg_dag_start.png" /></li>
+}</pre></li>
 <li><pre>DAG: Eg DAG
 Inputs:
 NODE: in, id:In, value:10
       display_name:In tooltip:
       calc: None usedby:x3</pre></li>
-<li>comment y I'm a code annotation! I can contain <code>code</code>, __formatted</li>
-<li><pre>strict digraph  {
+<li><pre> NODE: out, id:out, value:30
+      display_name:out tooltip: 
+      calc: <function DAG_dot.__init__.\<locals>.calc_out at 0x1007b9b20> usedby:None
+    </pre></li>
+<li><img alt="image" src="../images/eg_dag_end.png" /> <pre>strict digraph  {
     graph [label="Eg DAG",
         labelloc=t,
         rankdir=LR
@@ -630,8 +632,7 @@ NODE: in, id:In, value:10
         fontcolor=blue,
         fontname=Courier,
         label=10];
-}</pre>
-<img alt="image" src="../images/eg_dag_end.png" /></li>
+}</pre></li>
 </ol>
 <hr />
 
