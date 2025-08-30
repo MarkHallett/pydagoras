@@ -2,39 +2,37 @@
 ![alt text](images/pydagoras.png "pydagoras")
 
 ## Introduction
-pydagoras is a Python package to create Directed Acyclic Graphs [DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph)s</br>
-
-If you have any feedback, please give some feedback in the <b>Was this page helpful?</b> section at the bottom of each page.
-</b>
-</br>
+pydagoras is a Python package to create Directed Acyclic Graphs ([DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph)s) </br>
 </br>
 The aim of this site is to;
 
-* Document the [pypi pydagoras package](package.md) that underpins the demo site.
+* Document the pypi package [pydagoras](https://pypi.org/project/pydagoras) that underpins the demo site.
 * Show an example script that uses `pydagoras`.
-* Document the  [demo site](https://pydagoras.com) where example DAGs can be seen and used.
+* Document the [demo site](https://pydagoras.com)  where the example app can be seen and used.
+* Explian how the how the demo app has been built.:
 
 ## [Package](package.md)
 pydagoras can be installed from PyPi, which can be reached using the Python link the bottom right corner of this page.</br>
 The package section details;
 
-* What is included in the package
 * Other ways to get pydagoras
+* What is included in the package
 
-## [Example use](example_script.md)
-in index.md
-
-## [Example use](example_app.md)
-This section details an example of a front end, that connects to a backend pydagoras DAG, and shows the DAG graphicaly as it updates.
+## [Example script](example_script.md)
+This section documents the script `eg_use_pydagoras.py` that is included in the test folder of the package. It provides an example of;
 
 * How to constuct a DAG using pydagoras by creating and linking nodes
 * Updating inputs
 * Accessing the output
 
 ## [Demo](demo.md)
-This section links to the demo site, it details how to use the demo site and to make and see changes to the DAGs.
-It also shows shows screenshots of example DAGs, as well as a video site showing three example pydagoras DAGs being updated.
+In this section there is a link to the demo site, it details how to use the demo site and how to make and see changes to the three example DAGs.
+It also shows a video showing the three example pydagoras DAGs being updated.
 
+## [Example app](example_app.md)
+This section explains how the example app has been built, with a front end, that connects to a backend that uses pydagoras. 
 
 ## [Code reference](reference.md)
 This section allows you to look into the code behind the pydagoras package.
+
+------

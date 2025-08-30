@@ -1,15 +1,16 @@
 In the pydagoras github repository folder `tests` includes the script `eg_use_pydagoras.py`
 
-The following code will create the simple DAG
+The following simple DAG
 <br>
 <br>
 ![image](images/eg_dag.png){: style="height:100px;width:350px"}
-
+<br>
+will be created, updated and displayed by the following code
 
 ``` python title="Import the necessary code from pydagoras" linenums="4" 
 from pydagoras.dag_dot import DAG_dot, calc
 ```
-``` python title="Define the node calculations" linenums="9" 
+``` python title="Define the node calculations" linenums="10" 
     @calc
     def tripple(node=None):
         return node.get_value() * 3
@@ -21,13 +22,13 @@ from pydagoras.dag_dot import DAG_dot, calc
     n2 = dag.makeNode('x3', calc=tripple, tooltip='multiply')
     n1 = dag.makeNode('In', calc=None, usedby=[n2], nodetype='in')
 ```
-``` python title="Print the initial DAG" linenums="36"
+``` python title="Print the initial DAG" linenums="19"
     print(dag.G.to_string())  
 ```
-``` python title="Update the DAG input" linenums="19" 
+``` python title="Update the DAG input" linenums="22" 
     dag.set_input('In', 10)
 ```
-``` python title="Print the final DAG" linenums="36"
+``` python title="Print the final DAG" linenums="30"
     print(dag.G.to_string()) 
 ```
 <br>
@@ -71,7 +72,7 @@ if __name__ == '__main__':
 
 ```
 
-1.  <pre>strict digraph  {
+1.  ![image](images/eg_dag_start.png) <pre>strict digraph  {
 	graph [label="Eg DAG",
 		labelloc=t,
 		rankdir=LR
@@ -84,14 +85,16 @@ if __name__ == '__main__':
 	In -> x3	 [fontname=Courier,
 		label=Undefined];
 }</pre>
-![image](images/eg_dag_start.png)
 2.  <pre>DAG: Eg DAG
 Inputs:
 NODE: in, id:In, value:10
       display_name:In tooltip:
       calc: None usedby:x3</pre>
-3.  comment y I'm a code annotation! I can contain `code`, __formatted
-4.  <pre>strict digraph  {
+3.  <pre> NODE: out, id:out, value:30
+      display_name:out tooltip: 
+      calc: <function DAG_dot.__init__.<locals>.calc_out at 0x1007b9b20> usedby:None
+    </pre>
+4.  ![image](images/eg_dag_end.png) <pre>strict digraph  {
 	graph [label="Eg DAG",
 		labelloc=t,
 		rankdir=LR
@@ -112,7 +115,6 @@ NODE: in, id:In, value:10
 		fontname=Courier,
 		label=10];
 }</pre>
-![image](images/eg_graph.png)
 
 
 

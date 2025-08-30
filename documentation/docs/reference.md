@@ -1,5 +1,5 @@
 #Code reference
-This page documents the code in the pydagoras package, and has been made with the help of mkdocstrings.
+This page show the files that in the pydagoras package that contribute to the `DAG_dot` base class.
 
 __node.py__
 
