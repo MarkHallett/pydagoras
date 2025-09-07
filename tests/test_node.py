@@ -1,7 +1,22 @@
 #test_dag.py
 
 import unittest
-from pydagoras.node import Node
+
+try:
+    from pydagoras.node import Node
+
+except ModuleNotFoundError:
+    # for running tests, if pydagoras is not installed
+    import sys, os
+
+    cwd = os.getcwd()
+    src_path = f'{cwd}/../src'
+    src_pydagoras_path = f'{cwd}/../src/pydagoras'
+
+    sys.path.insert(0, src_path)
+    sys.path.insert(0, src_pydagoras_path)
+
+    from pydagoras.node import Node
 
 
 class TestNode(unittest.TestCase):

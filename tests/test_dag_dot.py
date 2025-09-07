@@ -1,17 +1,24 @@
 # tests/test_dag_dot.py
 
 import unittest
-from pydagoras.node import Node
 
-from pydagoras.dag_dot import DAG_dot, calc
-'''
 try:
+    from pydagoras.node import Node
+    from pydagoras.dag_dot import DAG_dot, calc
+
 except ModuleNotFoundError:
+    # for running tests, if pydagoras is not installed
     import sys, os
+
     cwd = os.getcwd()
-    sys.path.insert(0, f'{cwd}/../src/pydagoras')
+    src_path = f'{cwd}/../src'
+    src_pydagoras_path = f'{cwd}/../src/pydagoras'
+
+    sys.path.insert(0, src_path)
+    sys.path.insert(0, src_pydagoras_path)
+
     from dag_dot import DAG_dot, calc
-'''
+
 
 class TestDAGDot(unittest.TestCase):
     def setUp(self):

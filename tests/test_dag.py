@@ -5,8 +5,30 @@ import sys
 import json
 import unittest
 
-from pydagoras.dag_dot import DAG_dot, calc
-from pydagoras.dag import DAG
+#jfrom pydagoras.dag_dot import DAG_dot, calc
+#from pydagoras.dag import DAG
+
+try:
+    from pydagoras.dag import DAG
+    from pydagoras.dag_dot import DAG_dot, calc
+
+    #from pydagoras.node import Node
+    #from pydagoras.dag_dot import DAG_dot, calc
+
+except ModuleNotFoundError:
+    # for running tests, if pydagoras is not installed
+    import sys, os
+
+    cwd = os.getcwd()
+    src_path = f'{cwd}/../src'
+    src_pydagoras_path = f'{cwd}/../src/pydagoras'
+
+    sys.path.insert(0, src_path)
+    sys.path.insert(0, src_pydagoras_path)
+
+    from pydagoras.dag import DAG
+    from pydagoras.dag_dot import DAG_dot, calc
+
 
 class TestDAG(unittest.TestCase):
     def setUp(self):
@@ -57,7 +79,7 @@ class TestDAG(unittest.TestCase):
         dag_json = json.dumps(dag.values, sort_keys=True, indent=2)
         print(dag_json)
         print(str(dag_json))
-        
+
     def test_pp_json(self):
         dag = DAG()
         dag.set_value('a', 1)
