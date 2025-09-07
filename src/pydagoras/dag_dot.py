@@ -1,4 +1,5 @@
-# dag_dot
+# dag_dot.py
+
 from functools import wraps
 
 import logging
@@ -28,6 +29,9 @@ class DAG_dot:
 
         self.n_out = self.makeNode('out', calc=calc_out, usedby=[], nodetype='out') 
         
+    def __str__(self):
+        return f'DAG_dot(label:{self.label}, nodes:{len(self.nodes)})'
+
 
     def makeNode(self,label,calc,usedby=None, nodetype='internal', display_name=None, tooltip=''):
         if usedby is None:
@@ -96,43 +100,30 @@ class DAG_dot:
         for u in n.usedby:
             if u.calc == None:
                 continue
-            try:
-                #new_value = u.calc(node=n)
-                #new_value = u.calc(self, node=n)
-                new_value = u.calc(self, node=n)  # Call the calc function with self and node
-            except Exception as e:
-                print('Error in setValue')
-                print (str(e))
-                new_value = 'ee' # ??
             
-
+            new_value = u.calc(self, node=n)  # Call the calc function with self and node, contains error handling
             self.dag.set_value(u.node_id, new_value)
-            #self.set_value(u,new_value)
-            #self.setValue(u,new_value)
 
         if not n.usedby:
             return
 
         if n.usedby[0].usedby == []: # output node
-            # not shown!
             msg = 'update dag_dot.py %s %s' %(n.usedby[0].node_id, n.get_value())
             logger.info (msg)
-            #print(msg)
 
 
     def ppInputs(self):
         for n in self.input_nodes:
-            n.pp()
+            print(n)
 
     def ppInternals(self):
         for n in self.internal_nodes:
-            n.pp()
+            print(n)
 
     def ppOutput(self):
-        self.output_node.pp()
+        print(self.output_node)
 
     def pp(self):
-        print('==============') 
         print(f'DAG: {self.label}')
         print('Inputs:')
         self.ppInputs()
@@ -141,8 +132,14 @@ class DAG_dot:
         print('Output:')
         self.ppOutput()
 
-    def ppValues(self):
-        print(self.dag.values)  # Print the values of all nodes in the DAG
+    def pp_json(self):
+        values = self.dag.values  # Print the values of all nodes in the DAG
+        return {
+            "label": self.label,
+            "values": values
+        }
+
+
 
     def get_value(self):
          return self.dag.get_value(self.label)
@@ -166,13 +163,11 @@ def calc(f1): # decorator deffinition
             u_node.set_tooltip(u_node.orig_tooltip)  # Set the tooltip of the node
 
         except Exception as e:
-            print ('Error in %s: %s' %(u_node.node_id,str(e)))
+            logger.error('Error in %s: %s' %(u_node.node_id,str(e)))
             rtn = 'e'
             u_node.set_value(rtn)  # Set the value of the node
-            print('o'*20)
             u_node.set_tooltip(str(e))  # Set the tooltip of the node
 
-        #print('checking nodes to update....')
         for u_node in node.usedby:
             #print(f'Updating node: {u_node.node_id} with value: {rtn}')
             dag.set_input(u_node.node_id, rtn)
@@ -181,21 +176,25 @@ def calc(f1): # decorator deffinition
     return f3
 
 if __name__ == '__main__':
-    print('#######################################')
 
     @calc
-    def calc_tripple(node=None):
+    def calc_triple(node=None):
         return node.get_value() * 3 
 
-    dag = DAG_dot(label='Test DAG')
-    n2 = dag.makeNode('b', calc=calc_tripple)
-    n1 = dag.makeNode('a', calc=None, usedby=[n2], nodetype='in') #, display_name='Input A')
-
-    print('Updates --------------') 
-    dag.set_input('a', 10)
-    dag.pp()
-
-    print('Graph representation:')  
-    print(dag.G.to_string())  # Print the graph representation  
+    my_dag = DAG_dot(label='Test DAG')
+    n2 = my_dag.makeNode('b', calc=calc_triple)
+    n1 = my_dag.makeNode('a', calc=None, usedby=[n2], nodetype='in') #, display_name='Input A')
+    my_dag.set_input('a', 10)
     
+    print(f'{my_dag=}')  
 
+    my_dag.pp()
+
+    import json
+    print(json.dumps(my_dag.pp_json(), sort_keys=True, indent=2))
+    
+    print('Graph representation:')  
+    print(my_dag.G.to_string())  # Print the graph representation  
+
+    print(repr(my_dag))  
+    

@@ -1,7 +1,22 @@
 # eg_use_pydagoras.py
 # a script to provide an example of creating and using a DAG using pydagoras
 
-from pydagoras.dag_dot import DAG_dot, calc
+
+import os
+import sys
+
+try:
+    from pydagoras.dag_dot import DAG_dot, calc
+except ModuleNotFoundError as e:
+    cwd = os.getcwd()
+    src_path = f'{cwd}/../src'
+    src_pydagoras_path = f'{cwd}/../src/pydagoras'
+
+    sys.path.insert(0, src_path)
+    sys.path.insert(0, src_pydagoras_path)
+
+    from dag import DAG
+    from dag_dot import DAG_dot, calc
 
 def run():
 
