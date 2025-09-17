@@ -69,6 +69,8 @@ class DAG_dot:
 
     def update_node(self,node1,node2,value,tooltip='not set XXX'):
         fontcolor, color = self.get_colors(value)
+        if isinstance(value, (int, float)):
+            value = round(value,3)
         self.G.add_node(node1,color=color,fontcolor=fontcolor,tooltip=tooltip)
         self.G.add_edge(node1,node2, label=value,fontcolor=fontcolor,color=color, fontname="Courier")
  
